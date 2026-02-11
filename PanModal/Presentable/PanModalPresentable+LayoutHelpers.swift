@@ -104,7 +104,7 @@ extension PanModalPresentable where Self: UIViewController {
             let targetSize = CGSize(width: (presentedVC?.containerView?.bounds ?? UIScreen.main.bounds).width,
                                     height: UIView.layoutFittingCompressedSize.height)
 
-            let intrinsicSizeIncludeSafeArea = view.systemLayoutSizeFitting(targetSize)
+            let intrinsicSizeIncludeSafeArea = view.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
 
             // Initially the view has no safe area, as it's not positioned in an area that would require it
             // However, in an intermediate layout pass it gains a safe area, which makes this height bigger than it should be
